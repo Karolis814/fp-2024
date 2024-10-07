@@ -1,0 +1,25 @@
+# --- Library ---
+
+<publication>		::= <book> | <journal>
+
+<journal>			::= <journal-title> <redactor> <realise-year> <realise-place>
+<journal-title>		::= <word> | <journal-title> <word>
+<redactor>			::= <name> <surname>
+<realise-place>		::= <word> | <realise-place> <word>
+
+<book>				::= <book-title> <book-author> <realise-year> <language>
+<book-title>		::= <word> | <book-title> <word>
+<book-author>		::= <name> <surname>
+<language>			::= <word> | <language> <word>
+
+<name>				::= <letter> | <name> <letter>
+<surname>			::= <letter> | <surname> <letter>
+<realise-year>		::= <digit> <digit> <digit> <digit>
+
+
+<letter> 	::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+<digit> 	::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<number>	::= <digit> | <number> <digit>
+<word>		::= <letter> | <digit> | <word> <letter> | <word> <digit>
+
+<commands>	::= "new" <book> | "delete" <book> | "new" <journal> | "delete" <journal> | "list" <publication> 
